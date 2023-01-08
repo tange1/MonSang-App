@@ -1,0 +1,55 @@
+[
+  {
+    "username": "readonly@bfh.ch",
+    "password": "do-not-write",
+    "phone": "+41 77 123 987",
+    "givenName": "René",
+    "familyName": "Gerber"
+  },
+  {
+    "username": "m@ria.ch",
+    "password": "maria",
+    "phone": "079 111 22 33",
+    "givenName": "Maria",
+    "familyName": "Schmid"
+  },
+  {
+    "username": "elisabeth@broennimann.today",
+    "password": "19kurt69",
+    "givenName": "Elisabeth",
+    "familyName": "Brönnimann",
+    "phone": "+41 32 321 61 11"
+  },
+  {
+    "username": "matteo@mail.li",
+    "password": "test",
+    "phone": "079 123 45 67",
+    "givenName": "Matteo",
+    "familyName": "Lecomte"
+  },
+  {
+    "username": "pat67@approches.ch",
+    "password": "laur3nt",
+    "givenName": "Patricia",
+    "familyName": "Laurent",
+    "phone": "+41 32 321 61 11"
+  },
+  {
+    "username": "laura@wyss.ch",
+    "password": "laura",
+    "phone": "076 111 22 33",
+    "givenName": "Laura",
+    "familyName": "Wyss",
+    "maidenName": "Wyss",
+    "birthdate": "03.01.1927",
+    "gender": "weiblich",
+    "address": {
+      "street": "Oberdorfstrasse",
+      "streetNumber": "3",
+      "postalCode": "4001",
+      "place": "Basel"
+    },
+    "donationNumber": "1234567",
+    "bloodGroup": "0+"
+  }
+]

@@ -1,0 +1,2938 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "fragebogen-neuspender",
+  "version": "0.2",
+  "name": "Fragebogen-Neuspender",
+  "title": "Neuspender",
+  "_title": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension": [
+          {
+            "url": "lang",
+            "valueCode": "de"
+          },
+          {
+            "url": "content",
+            "valueString": "Neuspender"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "active",
+  "subjectType": ["Patient"],
+  "publisher": "Roberto Tangarife",
+  "contained": [
+    {
+      "resourceType": "ValueSet",
+      "id": "YES-NO-Valueset",
+      "url": "http://to.be.defined",
+      "title": "yes/no",
+      "status": "active",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "373066001",
+                "display": "yes",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "ja"
+                  }
+                ]
+              },
+              {
+                "code": "373067005",
+                "display": "no",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "nein"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "Q17-Valueset",
+      "url": "http://to.be.defined",
+      "title": "Q17-Valueset",
+      "status": "active",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "A17.1",
+                "display": "Spitalaufenthalt",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Spitalaufenthalt"
+                  }
+                ]
+              },
+              {
+                "code": "A17.2",
+                "display": "Operation",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Operation"
+                  }
+                ]
+              },
+              {
+                "code": "A17.3",
+                "display": "Unfall",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Unfall"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "Q27a-Valueset",
+      "url": "http://to.be.defined",
+      "title": "Q27a-Valueset",
+      "status": "active",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "187192000",
+                "display": "Toxoplasmose",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Toxoplasmose"
+                  }
+                ]
+              },
+              {
+                "code": "271558008",
+                "display": "Pfeiffersches Drüsenfieber",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Pfeiffersches Drüsenfieber"
+                  }
+                ]
+              },
+              {
+                "code": "111910009",
+                "display": "Amöbiasis Schigellose",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Amöbiasis Schigellose"
+                  }
+                ]
+              },
+              {
+                "code": "7125002",
+                "display": "FSME",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "FSME"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "Q27b-Valueset",
+      "url": "http://to.be.defined",
+      "title": "Q27b-Valueset",
+      "status": "active",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "10087007",
+                "display": "Bilharziose",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Bilharziose"
+                  }
+                ]
+              },
+              {
+                "code": "15628003",
+                "display": "Gonorrhö",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Gonorrhö"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "Q27c-Valueset",
+      "url": "http://to.be.defined",
+      "title": "Q27c-Valueset",
+      "status": "active",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "60168000",
+                "display": "Osteomyelitis",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Osteomyelitis"
+                  }
+                ]
+              },
+              {
+                "code": "58718002",
+                "display": "Rheumatisches Fieber",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Rheumatisches Fieber"
+                  }
+                ]
+              },
+              {
+                "code": "56717001",
+                "display": "Tuberkulose",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Tuberkulose"
+                  }
+                ]
+              },
+              {
+                "code": "386661006",
+                "display": "Rückfallfieber",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Rückfallfieber"
+                  }
+                ]
+              },
+              {
+                "code": "40956001",
+                "display": "Guillain-Barré-Syndrom",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Guillain-Barré-Syndrom"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "Q28-Valueset",
+      "url": "http://to.be.defined",
+      "title": "Q28-Valueset",
+      "status": "active",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "61462000",
+                "display": "Malaria",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Malaria"
+                  }
+                ]
+              },
+              {
+                "code": "77506005",
+                "display": "Chagas",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Chagas"
+                  }
+                ]
+              },
+              {
+                "code": "75702008",
+                "display": "Brucellose",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Brucellose"
+                  }
+                ]
+              },
+              {
+                "code": "74942003",
+                "display": "Echinokokkose",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Echinokokkose"
+                  }
+                ]
+              },
+              {
+                "code": "80612004",
+                "display": "Leishmaniose",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Leishmaniose"
+                  }
+                ]
+              },
+              {
+                "code": "186946009",
+                "display": "Lymphogranuloma venereum",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Lymphogranuloma venereum"
+                  }
+                ]
+              },
+              {
+                "code": "105706003",
+                "display": "Filariose",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Filariose"
+                  }
+                ]
+              },
+              {
+                "code": "186788009",
+                "display": "Q-Fieber",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Q-Fieber"
+                  }
+                ]
+              },
+              {
+                "code": "21061004",
+                "display": "Babesiose",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Babesiose"
+                  }
+                ]
+              },
+              {
+                "code": "37109004",
+                "display": "Ebola",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Ebola"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "Q31-Valueset",
+      "url": "http://to.be.defined",
+      "title": "Q31-Valueset",
+      "status": "active",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "A31.1",
+                "display": "eine Magen- / Darmspiegelung",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "eine Magen- / Darmspiegelung"
+                  }
+                ]
+              },
+              {
+                "code": "A31.2",
+                "display": "eine Akupunkturbehandlung",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "eine Akupunkturbehandlung"
+                  }
+                ]
+              },
+              {
+                "code": "A31.3",
+                "display": "eine elektrische Haarentfernung (Nadelepilation)",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "eine elektrische Haarentfernung (Nadelepilation)"
+                  }
+                ]
+              },
+              {
+                "code": "A31.4",
+                "display": "eine Tätowierung",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "eine Tätowierung"
+                  }
+                ]
+              },
+              {
+                "code": "A31.5",
+                "display": "kosmetische Behandlungen wie Permanent-Make-up oder Mikroblading",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "kosmetische Behandlungen wie Permanent-Make-up oder Mikroblading"
+                  }
+                ]
+              },
+              {
+                "code": "A31.6",
+                "display": "ein Piercing",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "ein Piercing"
+                  }
+                ]
+              },
+              {
+                "code": "A31.7",
+                "display": "Kontakt mit Fremdblut (Nadelstichverletzung, Blutspritzer in Augen, Mund oder anderes)",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Kontakt mit Fremdblut (Nadelstichverletzung, Blutspritzer in Augen, Mund oder anderes)"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "Q34-Valueset",
+      "url": "http://to.be.defined",
+      "title": "Q34-Valueset",
+      "status": "active",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "A34.1",
+                "display": "Wechsel oder neue Sexualpartnerschaft in den letzten 4 Monaten",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Wechsel oder neue Sexualpartnerschaft in den letzten 4 Monaten"
+                  }
+                ]
+              },
+              {
+                "code": "A34.2",
+                "display": "Sexueller Kontakt (geschützt oder nicht geschützt) mit wechselnden Partner/innen (mehr als zwei) in den letzten 4 Monaten",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Sexueller Kontakt (geschützt oder nicht geschützt) mit wechselnden Partner/innen (mehr als zwei) in den letzten 4 Monaten"
+                  }
+                ]
+              },
+              {
+                "code": "A34.3",
+                "display": "Sexueller Kontakt unter Einfluss synthetischer Drogen in den letzten 12 Monaten",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Sexueller Kontakt unter Einfluss synthetischer Drogen in den letzten 12 Monaten"
+                  }
+                ]
+              },
+              {
+                "code": "A34.4",
+                "display": "Sexuelle Kontakte unter Annahme von Geld, Drogen oder Medikamenten in den letzten 12 Monaten",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Sexuelle Kontakte unter Annahme von Geld, Drogen oder Medikamenten in den letzten 12 Monaten"
+                  }
+                ]
+              },
+              {
+                "code": "A34.5",
+                "display": "Injektion von Drogen, früher oder gegenwärtig",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Injektion von Drogen, früher oder gegenwärtig"
+                  }
+                ]
+              },
+              {
+                "code": "A34.6",
+                "display": "Positiver Test für HIV (AIDS), Syphilis oder Gelbsucht (Hepatitis B oder C)",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Positiver Test für HIV (AIDS), Syphilis oder Gelbsucht (Hepatitis B oder C)"
+                  }
+                ]
+              },
+              {
+                "code": "A34.7",
+                "display": "Lebens-, Sexual- oder Wohnpartner/in ist in den letzten 6 Monaten an einer Gelbsucht erkrankt",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Lebens-, Sexual- oder Wohnpartner/in ist in den letzten 6 Monaten an einer Gelbsucht erkrankt"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "Countries-Valueset",
+      "url": "http://to.be.defined",
+      "title": "Countries-Valueset",
+      "status": "active",
+      "compose": {
+        "include": [
+          {
+            "system": "http://snomed.info/sct",
+            "concept": [
+              {
+                "code": "CH",
+                "display": "Schweiz",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "Schweiz"
+                  }
+                ]
+              },
+              {
+                "code": "EN",
+                "display": "Englang",
+                "designation": [
+                  {
+                    "language": "de",
+                    "value": "England"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "P00",
+      "type": "group",
+      "text": "Personalien",
+      "required": false,
+      "item": [
+        {
+          "linkId": "P1",
+          "code": [
+            {
+              "system": "http://loinc.org/",
+              "code": "45394-4",
+              "display": "Patient Last (Family) Name"
+            }
+          ],
+          "type": "string",
+          "repeats": false,
+          "required": true,
+          "text": "Familienname",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "Familienname"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "linkId": "P2",
+          "code": [
+            {
+              "system": "http://loinc.org/",
+              "code": "45392-8",
+              "display": "Patient First (Given) Name"
+            }
+          ],
+          "type": "string",
+          "repeats": false,
+          "required": true,
+          "text": "Vorname",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "Vorname"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "linkId": "P3",
+          "type": "string",
+          "repeats": false,
+          "required": false,
+          "text": "Geburtsname",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "Geburtsname"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "linkId": "P4",
+          "code": [
+            {
+              "system": "http://loinc.org/",
+              "code": "21112-8",
+              "display": "Date of Birth"
+            }
+          ],
+          "type": "date",
+          "repeats": false,
+          "required": true,
+          "text": "Geburtsdatum",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "Geburtsdatum"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "linkId": "P5",
+          "code": [
+            {
+              "system": "http://loinc.org/",
+              "code": "46098-0",
+              "display": "Sex"
+            }
+          ],
+          "text": "Ihr Geschlecht",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "Ihr Geschlecht"
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "choice",
+          "required": true,
+          "repeats": false,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "female",
+                "display": "female",
+                "_display": {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                      "extension": [
+                        {
+                          "url": "lang",
+                          "valueCode": "de"
+                        },
+                        {
+                          "url": "content",
+                          "valueString": "weiblich"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "male",
+                "display": "male",
+                "_display": {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                      "extension": [
+                        {
+                          "url": "lang",
+                          "valueCode": "de"
+                        },
+                        {
+                          "url": "content",
+                          "valueString": "männlich"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "other",
+                "display": "other",
+                "_display": {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                      "extension": [
+                        {
+                          "url": "lang",
+                          "valueCode": "de"
+                        },
+                        {
+                          "url": "content",
+                          "valueString": "divers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "P7",
+          "code": [
+            {
+              "system": "http://loinc.org/",
+              "code": "56799-0",
+              "display": "Address"
+            }
+          ],
+          "type": "group",
+          "text": "Adresse",
+          "required": false,
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "Adresse"
+                  }
+                ]
+              }
+            ]
+          },
+          "item": [
+            {
+              "linkId": "P7.1",
+              "code": [
+                {
+                  "system": "http://loinc.org/",
+                  "code": "63728-0",
+                  "display": "Street Address"
+                }
+              ],
+              "type": "string",
+              "text": "Strasse",
+              "required": false
+            },
+            {
+              "linkId": "P7.2",
+              "type": "string",
+              "text": "Strassennummer",
+              "required": false
+            },
+            {
+              "linkId": "P7.3",
+              "code": [
+                {
+                  "system": "http://loinc.org/",
+                  "code": "45401-7",
+                  "display": "Postal Code"
+                }
+              ],
+              "type": "string",
+              "text": "Postcode",
+              "extension": [
+                {
+                  "url": "http://ehelse.no/fhir/StructureDefinition/sdf-fhirpath",
+                  "valueString": "Patient.address.where(use = 'home').postalCode"
+                }
+              ],
+              "required": false
+            },
+            {
+              "linkId": "P7.4",
+              "type": "string",
+              "text": "Ort",
+              "extension": [
+                {
+                  "url": "http://ehelse.no/fhir/StructureDefinition/sdf-fhirpath",
+                  "valueString": "Patient.address.where(use = 'home').city"
+                }
+              ],
+              "required": false
+            }
+          ]
+        },
+        {
+          "linkId": "P8",
+          "type": "string",
+          "required": false,
+          "text": "Telefon Privat",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "Telefon Privat"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "linkId": "P9",
+          "type": "string",
+          "required": false,
+          "text": "Telefon Mobile",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "Telefon Mobile"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "linkId": "P10",
+          "type": "string",
+          "required": false,
+          "text": "Telefon Geschäft",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "Telefon Geschäft"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "linkId": "P11",
+          "code": [
+            {
+              "system": "http://loinc.org/",
+              "code": "76458-9",
+              "display": "Patient Email Address"
+            }
+          ],
+          "type": "string",
+          "required": false,
+          "text": "E-Mail",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "E-Mail"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "Q00",
+      "type": "group",
+      "text": "Gesundheitsfragebogen",
+      "item": [
+        {
+          "linkId": "Q1",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "1. Haben Sie jemals Blut gespendet?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "1. Haben Sie jemals Blut gespendet?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "item": [
+            {
+              "linkId": "Q1.1",
+              "type": "date",
+              "repeats": false,
+              "required": false,
+              "text": "1.1 Falls ja, wann letztmals?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "1.1 Falls ja, wann letztmals?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q1",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Q1.2",
+              "type": "string",
+              "repeats": false,
+              "required": false,
+              "text": "1.2 Wo?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "1.2 Wo?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q1",
+
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "Q2",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "2. Sind Sie mindestens 50 kg schwer?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "2. Sind Sie mindestens 50 kg schwer?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q3",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "3. Fühlen Sie sich zurzeit gesund?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "3. Fühlen Sie sich zurzeit gesund?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q4",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "4. Hatten Sie in den letzten 7 Tagen eine dentalhygienische oder zahnärztliche Behandlung?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "4. Hatten Sie in den letzten 7 Tagen eine dentalhygienische oder zahnärztliche Behandlung?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q5",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "5. Waren Sie in den letzten 4 Wochen in ärztlicher Behandlung oder hatten Sie Fieber über 38°C?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "5. Waren Sie in den letzten 4 Wochen in ärztlicher Behandlung oder hatten Sie Fieber über 38°C?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q6",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "6. Haben Sie in den letzten 4 Wochen Medikamente – auch rezeptfreie – verwendet (z. B.: Tabletten, Spritzen, Zäpfchen)?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "6. Haben Sie in den letzten 4 Wochen Medikamente – auch rezeptfreie – verwendet (z. B.: Tabletten, Spritzen, Zäpfchen)?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "item": [
+            {
+              "linkId": "Q6.1",
+              "type": "string",
+              "repeats": false,
+              "required": false,
+              "text": "6.1 Welche?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "6.1 Welche?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q6",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "Q7",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "7. Haben Sie in den letzten 4 Wochen Medikamente gegen Prostatavergrösserung oder Haarausfall (z. B. Alocapil®, Finacapil®, Propecia® oder Proscar®) oder gegen Akne (z. B. Roaccutan®, Curakne®, Isotretinoin®, Tretinac® oder Toctino®) eingenommen?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "7. Haben Sie in den letzten 4 Wochen Medikamente gegen Prostatavergrösserung oder Haarausfall (z. B. Alocapil®, Finacapil®, Propecia® oder Proscar®) oder gegen Akne (z. B. Roaccutan®, Curakne®, Isotretinoin®, Tretinac® oder Toctino®) eingenommen?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q8",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "8. Haben Sie in den letzten 4 Monaten Antiretrovirale Therapien/PEP/PrEP (z.B. Truvada®, Isentress®, Prezista/Norvir®) eingenommen?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "8. Haben Sie in den letzten 4 Monaten Antiretrovirale Therapien/PEP/PrEP (z.B. Truvada®, Isentress®, Prezista/Norvir®) eingenommen?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q9",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "9. Haben Sie in den letzten 3 Jahren Neotigason®, Acicutan® (Schuppenflechte) oder Erivedge® (Basalzellkarzinom) eingenommen?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "9. Haben Sie in den letzten 3 Jahren Neotigason®, Acicutan® (Schuppenflechte) oder Erivedge® (Basalzellkarzinom) eingenommen?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q10",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "10. Haben Sie in den letzten 12 Monaten aus Blut hergestellte Medikamente erhalten?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "10. Haben Sie in den letzten 12 Monaten aus Blut hergestellte Medikamente erhalten?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q11",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "11. Haben Sie jemals eine Immuntherapie (Zellen oder Serum menschlichen oder tierischen Ursprungs) erhalten?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "11. Haben Sie jemals eine Immuntherapie (Zellen oder Serum menschlichen oder tierischen Ursprungs) erhalten?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q12",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "12. Wurden Sie in den letzten 12 Monaten gegen Tollwut oder Starrkrampf geimpft?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "12. Wurden Sie in den letzten 12 Monaten gegen Tollwut oder Starrkrampf geimpft?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q13",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "13. Haben Sie in den letzten 4 Wochen andere Impfungen erhalten?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "13. Haben Sie in den letzten 4 Wochen andere Impfungen erhalten?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "item": [
+            {
+              "linkId": "Q13.1",
+              "type": "string",
+              "repeats": false,
+              "required": false,
+              "text": "13.1 Welche?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "13.1 Welche?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q13",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Q13.2",
+              "type": "date",
+              "repeats": false,
+              "required": false,
+              "text": "13.2 Wann?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "13.2 Wann?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q13",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "Q14",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "14. Haben oder hatten Sie eine der folgenden Krankheiten oder Krankheitszeichen? Herz/Kreislauf- oder Lungenerkrankung (z. B. erhöhter / zu tiefer Blutdruck, Herzinfarkt, Atemnot, Hirnschlag, Streifung, Bewusstlosigkeit)?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "14. Haben oder hatten Sie eine der folgenden Krankheiten oder Krankheitszeichen? Herz/Kreislauf- oder Lungenerkrankung (z. B. erhöhter / zu tiefer Blutdruck, Herzinfarkt, Atemnot, Hirnschlag, Streifung, Bewusstlosigkeit)?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q15",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "15. Haut (z. B. Verletzung, Ausschlag, Ekzem, Fieberblase) oder Allergie (z. B. Heuschnupfen, Asthma, Medikamente)?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "15. Haut (z. B. Verletzung, Ausschlag, Ekzem, Fieberblase) oder Allergie (z. B. Heuschnupfen, Asthma, Medikamente)?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q16",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "16. Andere Krankheiten (z. B. Zucker, Blut, Thrombose oder Blutungsneigung, Gefässe, Nieren, Nerven, Epilepsie, Krebs, Osteoporose), Suchtkrankheit (Alkohol, Drogen oder Medikamente)?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "16. Andere Krankheiten (z. B. Zucker, Blut, Thrombose oder Blutungsneigung, Gefässe, Nieren, Nerven, Epilepsie, Krebs, Osteoporose), Suchtkrankheit (Alkohol, Drogen oder Medikamente)?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q17",
+          "type": "choice",
+          "repeats": true,
+          "required": false,
+          "text": "17. Hatten Sie in den letzten 3 Jahren oder seit Ihrer letzten Blutspende eine(n):",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "17. Hatten Sie in den letzten 3 Jahren oder seit Ihrer letzten Blutspende eine(n):"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#Q17-Valueset"
+        },
+        {
+          "linkId": "Q18",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "18. Wurde Ihnen jemals menschliches oder tierisches Gewebe übertragen oder haben Sie eine Organtransplantation erhalten?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "18. Wurde Ihnen jemals menschliches oder tierisches Gewebe übertragen oder haben Sie eine Organtransplantation erhalten?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q19",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "19. Wurde bei Ihnen jemals eine Operation am Gehirn oder Rückenmark durchgeführt?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "19. Wurde bei Ihnen jemals eine Operation am Gehirn oder Rückenmark durchgeführt?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q20",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "20. Haben Sie vor 01.01.1986 Wachstumshormone erhalten?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "20. Haben Sie vor 01.01.1986 Wachstumshormone erhalten?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q21",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "21. Ist bei Ihnen oder bei einem Ihrer Blutsverwandten die Creutzfeldt-Jakob-Erkrankung nachgewiesen worden oder besteht ein Verdacht darauf?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "21. Ist bei Ihnen oder bei einem Ihrer Blutsverwandten die Creutzfeldt-Jakob-Erkrankung nachgewiesen worden oder besteht ein Verdacht darauf?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q22",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "22. Waren Sie zwischen dem 01.01.1980 und dem 31.12.1996 für insgesamt 6 Monate oder länger im Vereinigten Königreich (UK) (England, Wales, Schottland, Nordirland, Isle of Man, Kanalinseln, Gibraltar und Falklandinseln)?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "22. Waren Sie zwischen dem 1. 1. 1980 und dem 31. 12. 1996 für insgesamt 6 Monate oder länger im Vereinigten Königreich (UK) (England, Wales, Schottland, Nordirland, Isle of Man, Kanalinseln, Gibraltar und Falklandinseln)?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q23",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "23. Haben Sie seit dem 01.01.1980 eine Bluttransfusion erhalten?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "23. Haben Sie seit dem 01.01.1980 eine Bluttransfusion erhalten?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q24",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "24. Waren Sie in den letzten 12 Monaten ausserhalb der Schweiz?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "24. Waren Sie in den letzten 12 Monaten ausserhalb der Schweiz?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "item": [
+            {
+              "linkId": "Q24.1",
+              "type": "string",
+              "repeats": false,
+              "required": false,
+              "text": "24.1 Falls ja, wo?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "24.1 Falls ja, wo?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q24",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Q24.2",
+              "type": "string",
+              "repeats": false,
+              "required": false,
+              "text": "24.2 Wie lange?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "24.2 Wie lange?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q24",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Q24.3",
+              "type": "date",
+              "repeats": false,
+              "required": false,
+              "text": "24.3 Seit wann sind Sie zurück?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "24.3 Seit wann sind Sie zurück?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q24",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Q24.4",
+              "type": "choice",
+              "repeats": false,
+              "required": false,
+              "text": "24.4 Hatten Sie dort seit Ihrer Rückkehr Krankheitszeichen (z.B. Fieber)?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "24.4 Hatten Sie dort seit Ihrer Rückkehr Krankheitszeichen (z.B. Fieber)?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q24",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ],
+              "answerValueSet": "#YES-NO-Valueset"
+            },
+            {
+              "linkId": "Q24.5",
+              "type": "choice",
+              "repeats": false,
+              "required": false,
+              "text": "24.5 Wenn ja, hatten Sie dort medizinische oder paramedizinische Eingriffe?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "24.5 Wenn ja, hatten Sie dort medizinische oder paramedizinische Eingriffe?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q24",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ],
+              "answerValueSet": "#YES-NO-Valueset"
+            }
+          ]
+        },
+        {
+          "linkId": "Q25",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "25. Sind Sie ausserhalb der Schweiz geboren, aufgewachsen oder haben Sie dort mehr als 6 Monate gelebt?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "25. Sind Sie ausserhalb der Schweiz geboren, aufgewachsen oder haben Sie dort mehr als 6 Monate gelebt?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "item": [
+            {
+              "linkId": "Q25.1",
+              "type": "string",
+              "repeats": false,
+              "required": false,
+              "text": "25.1 Wenn ja, in welchem Land?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "25.1 Wenn ja, in welchem Land?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q25",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Q25.2",
+              "type": "date",
+              "repeats": false,
+              "required": false,
+              "text": "25.2 Seit wann leben Sie in der Schweiz?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "25.2 Seit wann leben Sie in der Schweiz?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q25",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "Q26",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "26. Ist Ihre Mutter ausserhalb Europas geboren, aufgewachsen oder hat dort mehr als 6 Monate gelebt?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "26. Ist Ihre Mutter ausserhalb Europas geboren, aufgewachsen oder hat dort mehr als 6 Monate gelebt?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "item": [
+            {
+              "linkId": "Q26.1",
+              "type": "string",
+              "repeats": false,
+              "required": false,
+              "text": "26.1 Wenn ja, in welchem Land?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "26.1 Wenn ja, in welchem Land?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q26",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "Q27a",
+          "type": "choice",
+          "repeats": true,
+          "required": false,
+          "text": "27a. Erkrankten Sie in den letzten 6 Monaten an:",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "27a.Erkrankten Sie in den letzten 6 Monaten an:"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#Q27a-Valueset"
+        },
+        {
+          "linkId": "Q27b",
+          "type": "choice",
+          "repeats": true,
+          "required": false,
+          "text": "27b. Erkrankten Sie in den letzten 12 Monaten an:",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "27b. Erkrankten Sie in den letzten 12 Monaten an:"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#Q27b-Valueset"
+        },
+        {
+          "linkId": "Q27c",
+          "type": "choice",
+          "repeats": true,
+          "required": false,
+          "text": "27c. Erkrankten Sie in den letzten 2 Jahren an:",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "27c. Erkrankten Sie in den letzten 2 Jahren an:"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#Q27c-Valueset"
+        },
+        {
+          "linkId": "Q28",
+          "type": "choice",
+          "repeats": true,
+          "required": false,
+          "text": "28. Erkrankten Sie jemals an:",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "28. Erkrankten Sie jemals an:"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#Q28-Valueset",
+          "item": [
+            {
+              "linkId": "Q28.1",
+              "type": "date",
+              "repeats": false,
+              "required": false,
+              "text": "28.1 Wenn ja, wann?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "28.1 Wenn ja, wann?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q28",
+                  "operator": "=",
+                  "answerCoding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "61462000"
+                    },
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "77506005"
+                    }
+
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "Q29",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "29. Hatten Sie jemals eine andere schwere Infektionskrankheit?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "29. Hatten Sie jemals eine andere schwere Infektionskrankheit?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "item": [
+            {
+              "linkId": "Q29.1",
+              "type": "string",
+              "repeats": false,
+              "required": false,
+              "text": "29.1 Wenn ja: Welche?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "29.1 Wenn ja: Welche?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q29",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Q29.2",
+              "type": "date",
+              "repeats": false,
+              "required": false,
+              "text": "29.2 Wann?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "29.2 Wann?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q29",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "Q30",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "30. Hatten Sie in den letzten 4 Wochen einen Zeckenstich oder Kontakt mit Infektionskrankheiten?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "30. Hatten Sie in den letzten 4 Wochen einen Zeckenstich oder Kontakt mit Infektionskrankheiten?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "item": [
+            {
+              "linkId": "Q30.1",
+              "type": "string",
+              "repeats": false,
+              "required": false,
+              "text": "30.1 Falls ja, welche?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "30.1 Falls ja, welche?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q30",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "Q31",
+          "type": "choice",
+          "repeats": true,
+          "required": false,
+          "text": "31. Hatten Sie in den letzten 4 Monaten:",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "31. Hatten Sie in den letzten 4 Monaten:"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#Q31-Valueset",
+          "item": [
+            {
+              "linkId": "Q31.1",
+              "type": "date",
+              "repeats": false,
+              "required": false,
+              "text": "31.1 Wenn ja: Wann?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "31.1 Wenn ja: Wann?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.1"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.2"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.3"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.4"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.5"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.6"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.7"
+                  }
+                }
+              ],
+              "enableBehavior": "any"
+            },
+            {
+              "linkId": "Q31.2",
+              "type": "string",
+              "repeats": false,
+              "required": false,
+              "text": "31.2 Wo?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "31.2 Wo?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.1"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.2"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.3"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.4"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.5"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.6"
+                  }
+                },
+                {
+                  "question": "Q31",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "A31.7"
+                  }
+                }
+              ],
+              "enableBehavior": "any"
+            }
+          ]
+        },
+        {
+          "linkId": "Q32",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "32. Haben Sie jemals eine Gelbsucht (Hepatitis) durchgemacht oder einen positiven Hepatitis-Test gehabt?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "32. Haben Sie jemals eine Gelbsucht (Hepatitis) durchgemacht oder einen positiven Hepatitis-Test gehabt?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q33",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "33. Ist Ihr/Ihre Sexualpartner/in in den letzten 3 Monaten an Zika erkrankt?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "33. Ist Ihr/Ihre Sexualpartner/in in den letzten 3 Monaten an Zika erkrankt?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q34",
+          "type": "choice",
+          "repeats": true,
+          "required": false,
+          "text": "34. Treffen eine oder mehrere der folgenden Risikosituationen für Sie zu? Wenn ja, welche?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "34. Treffen eine oder mehrere der folgenden Risikosituationen für Sie zu? Wenn ja, welche?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#Q34-Valueset"
+        },
+        {
+          "linkId": "Q35",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "35. Haben Sie in den letzten 12 Monaten sexuelle Kontakte mit Partner/innen gehabt, die sich einer Risikosituation wie in der vorherigen Frage ausgesetzt haben?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "35. Haben Sie in den letzten 12 Monaten sexuelle Kontakte mit Partner/innen gehabt, die sich einer Risikosituation wie in der vorherigen Frage ausgesetzt haben?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset"
+        },
+        {
+          "linkId": "Q36",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "36. Haben Sie in den letzten 4 Monaten sexuellen Kontakt mit Partner/innen gehabt, die sich in HIV-HCV-HBV-Risikoländern für mehr als 6 Monate aufgehalten haben oder dort Bluttransfusionen erhalten haben?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "36. Haben Sie in den letzten 4 Monaten sexuellen Kontakt mit Partner/innen gehabt, die sich in HIV-HCV-HBV-Risikoländern für mehr als 6 Monate aufgehalten haben oder dort Bluttransfusionen erhalten haben?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "item": [
+            {
+              "linkId": "Q36.1",
+              "type": "date",
+              "repeats": false,
+              "required": false,
+              "text": "36.1 Datum der Rückkehr des/r Partners/in:",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "36.1 Datum der Rückkehr des/r Partners/in:"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q36",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "Q37",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "37. Nur Männer: Jemals sexueller Kontakt unter Männern, sexueller Kontakt unter Männern in den letzten 12 Monaten",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "37. Nur Männer: Jemals sexueller Kontakt unter Männern, sexueller Kontakt unter Männern in den letzten 12 Monaten"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "enableWhen": [
+            {
+              "question": "P5",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "male"
+              }
+            },
+            {
+              "question": "P5",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "other"
+              }
+            }
+          ]
+        },
+        {
+          "linkId": "Q38",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "38. Nur Frauen: Waren Sie jemals schwanger?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "38. Nur Frauen: Waren Sie jemals schwanger?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "enableWhen": [
+            {
+              "question": "P5",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "female"
+              }
+            },
+            {
+              "question": "P5",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "other"
+              }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "Q38.1",
+              "type": "date",
+              "repeats": false,
+              "required": false,
+              "text": "38.1 Falls ja, wann zuletzt?",
+              "_text": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                    "extension": [
+                      {
+                        "url": "lang",
+                        "valueCode": "de"
+                      },
+                      {
+                        "url": "content",
+                        "valueString": "38.1 Falls ja, wann zuletzt?"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "enableWhen": [
+                {
+                  "question": "Q38",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "Q39",
+          "type": "choice",
+          "repeats": false,
+          "required": false,
+          "text": "39. Nur Frauen: Haben Sie vor dem 01.01.1986 Hormonspritzen zur Behandlung von Unfruchtbarkeit erhalten?",
+          "_text": {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension": [
+                  {
+                    "url": "lang",
+                    "valueCode": "de"
+                  },
+                  {
+                    "url": "content",
+                    "valueString": "39. Nur Frauen: Haben Sie vor dem 01.01.1986 Hormonspritzen zur Behandlung von Unfruchtbarkeit erhalten?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#YES-NO-Valueset",
+          "enableWhen": [
+            {
+              "question": "P5",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "female"
+              }
+            },
+            {
+              "question": "P5",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://hl7.org/fhir/ValueSet/administrative-gender",
+                "code": "other"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
