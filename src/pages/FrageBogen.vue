@@ -100,7 +100,7 @@ export default defineComponent({
       qData: new QuestionnaireData(NEUSPENDER as Questionnaire, ['de']),
       response: undefined as QuestionnaireResponse | undefined,
       categorySelect: undefined as SystemCodeExtension | undefined,
-      confirm: false,
+      confirm: false,jj
       qrLink: '',
     };
   },
