@@ -120,7 +120,7 @@
 
             <q-card-section>
 
-              <q-btn label="Prüfen Sie Ihre Antworten" class="full-width" color="primary" type="submit"
+              <q-btn label="Verificar las respuestas" class="full-width" color="primary" type="submit"
                 @click="confirm = true"></q-btn>
             </q-card-section>
 
@@ -129,7 +129,7 @@
                 <q-card-section class="bg-secondary text-white">
                   <q-avatar size="lg" class="align-center" icon="error_outline" color="primary"
                     text-color="white"></q-avatar>
-                  <div class="text-h6">Our Changing Planet</div>
+                  <div class="text-h6">Sie dürfen Blut spenden.</div>
                 </q-card-section>
                 <q-card-actions align="around">
                   <q-btn flat @click="$router.push('/termin')">Weiter</q-btn>
@@ -143,7 +143,7 @@
                 <q-card-section class="bg-secondary text-white">
                   <q-avatar size="lg" class="align-center" icon="error_outline" color="primary"
                     text-color="white"></q-avatar>
-                  <div class="text-h6">Well done</div>
+                  <div class="text-h6">Sie dürfen nicht Blut spenden.</div>
                 </q-card-section>
                 <q-card-actions align="around">
                   <q-btn flat @click="$router.push('/termin')">Weiter</q-btn>
