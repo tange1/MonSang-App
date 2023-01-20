@@ -1,3 +1,8 @@
+<!--
+  Titel: Notification-Page
+  Description: Shows the page where a donor can get notified if its blood group is needed.
+  Author: Roberto Tangarife
+-->
 <template>
   <q-page padding class="start">
     <div>

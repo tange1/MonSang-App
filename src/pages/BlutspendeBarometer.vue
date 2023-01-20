@@ -1,3 +1,8 @@
+<!--
+  Titel: Question-Component
+  Description: Shows what the blood barometer of each swiss region.
+  Author: Roberto Tangarife
+-->
 <template>
   <q-card class="link-card">
     <q-card-section class="card-title">Blutgruppenbarometer</q-card-section>

@@ -1,3 +1,8 @@
+<!--
+  Titel: Error-Page
+  Description: Error-Page
+  Author: I4MI
+-->
 <template>
   <div
     class="fullscreen text-white text-center q-pa-md flex flex-center"

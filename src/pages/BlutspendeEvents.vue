@@ -1,3 +1,8 @@
+<!--
+  Titel: BlutspendeEvents-Page
+  Description: Shows the coming events for donating blood.
+  Author: Roberto Tangarife
+-->
 <template>
   <q-page padding class="start">
     <div>

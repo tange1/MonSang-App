@@ -1,3 +1,8 @@
+<!--
+  Titel: Question-Component
+  Description: Describes the upload of a document to the EPD Playground.
+  Author: I4MI
+-->
 <template>
   <q-card class="about-card">
     <q-card-section class="card-title">{{$t('documents.title')}}</q-card-section>

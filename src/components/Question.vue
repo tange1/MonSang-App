@@ -1,4 +1,9 @@
-<template>
+<!--
+  Titel: Question-Component
+  Description: Handles the questions from the questionnaire
+  Author: I4MI
+-->
+  <template>
   <div v-if="question.isEnabled" :class="
     'question ' +
     'question-' +

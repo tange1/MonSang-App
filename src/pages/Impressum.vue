@@ -1,3 +1,8 @@
+<!--
+  Titel: Impressum-Page
+  Description: Shows the impressum of the MonSang app.
+  Author: Roberto Tangarife
+-->
 <template>
   <q-page padding class="start">
     <div id="q-app">

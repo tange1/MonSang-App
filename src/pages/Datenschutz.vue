@@ -1,7 +1,9 @@
+<!--
+  Titel: Datenschutz-Page
+  Description: Shows the private policy
+  Author: Roberto Tangarife
+-->
 <template>
-
-
-
   <q-page padding class="start">
     <div>
       <!-- 1. Card: Vorab-Check -->
@@ -10,7 +12,7 @@
           <q-card-section class="card-title">Wo werden meine Daten gespeichert?</q-card-section>
           <q-card-section>
             <p>
-              Die Daten werden im EPD Playground abgelegt. Das EPD Playground soll das echte EPD imitieren.
+              Die Daten werden im EPD Playground abgelegt. Der EPD Playground soll das echte EPD imitieren.
             </p>
           </q-card-section>
         </q-card>

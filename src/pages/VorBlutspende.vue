@@ -1,3 +1,8 @@
+<!--
+  Titel: BeforeDonating-Page
+  Description: Shows what is important before donating blood.
+  Author: Roberto Tangarife
+-->
 <template>
   <q-page padding class="start">
     <div id="q-app">

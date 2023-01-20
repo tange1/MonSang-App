@@ -1,3 +1,8 @@
+<!--
+  Titel: Login-Component
+  Description: Provides the login.
+  Author: I4MI & Roberto Tangarife
+-->
 <template>
   <q-card class="login-card">
     <img class="horizontal-middle" alt="Mon Sang App logo" src="../assets/logo/Logo_final.png" />

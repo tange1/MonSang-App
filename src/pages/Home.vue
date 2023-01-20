@@ -1,3 +1,8 @@
+<!--
+  Titel: Home-Page
+  Description: Shows the home page of the MonSang app.
+  Author: Roberto Tangarife
+-->
 <template>
   <q-page padding>
     <div id="q-app">

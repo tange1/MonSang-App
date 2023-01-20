@@ -1,3 +1,8 @@
+<!--
+  Titel: Question-Component
+  Description: This page is not being used in this project
+  Author: I4MI
+-->
 <template>
   <q-card class="settings-card">
     <q-card-section class="card-title">{{

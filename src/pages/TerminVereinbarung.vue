@@ -1,3 +1,8 @@
+<!--
+  Titel: Question-Component
+  Description: Shows what the mockup of how to get an appointment.
+  Author: Roberto Tangarife
+-->
 <template>
   <q-page padding class="start">
     <div>

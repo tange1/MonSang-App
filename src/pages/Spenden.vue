@@ -1,3 +1,8 @@
+<!--
+  Titel: Question-Component
+  Description: Shows the main page of donating blood with the 3 cards.
+  Author: Roberto Tangarife
+-->
 <template>
   <q-page padding class="start">
     <div>

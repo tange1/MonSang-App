@@ -1,3 +1,8 @@
+<!--
+  Titel: MeinLayout
+  Description: Defines the main layout.
+  Author: Roberto Tangarife
+-->
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>

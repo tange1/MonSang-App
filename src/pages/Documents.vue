@@ -1,3 +1,8 @@
+<!--
+  Titel: Documents-Page
+  Description: Out of Scope
+  Author: I4MI
+-->
 <template>
   <q-card>
     <q-card-section class="card-title">{{$t('documents.title')}}</q-card-section>
