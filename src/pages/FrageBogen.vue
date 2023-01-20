@@ -376,7 +376,7 @@ export default defineComponent({
       };
 
       // Adds or edit patient data
-      this.$epdUtils.useITI93(this.$store.getPatient(), ITI_93_ACTION.UPDATE)
+      //this.$epdUtils.useITI93(this.$store.getPatient(), ITI_93_ACTION.UPDATE)
 
       const category = {
         system: 'http://snomed.info/sct',
