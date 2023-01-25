@@ -1,3 +1,8 @@
+<!--
+  Titel: Allergy
+  Description: Out-of-Scope
+  Author: I4MI & Roberto Tangarife
+-->
 <template>
   <q-card class="dashboard-card">
     <q-card-section class="card-title">

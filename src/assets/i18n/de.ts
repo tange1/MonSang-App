@@ -203,7 +203,7 @@ export default {
     location: 'Betroffene Stelle'
   },
   login: {
-    welcome1: 'Willkommen zu Ihrem Patientendossier!',
+    welcome1: 'Willkommen zur MonSang App!',
     welcome2: 'Loggen Sie sich mit Ihrer Mailadresse ein, um Ihre Gesundheitsdaten abzurufen.',
     eid_label: 'e-Mail',
     password_label: 'Passwort',

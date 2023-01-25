@@ -7,8 +7,8 @@
           :key="question.id"
           :question="question"
           :language="lang"
-          :onAnswer="qData.updateQuestionAnswers"
-          :isSelected="qData.isAnswerOptionSelected"
+          :onAnswer="qData.updateQuestionAnswers.bind(qData)"
+          :isSelected="qData.isAnswerOptionSelected.bind(qData)"
         />
       </div>
 
@@ -100,6 +100,7 @@ export default defineComponent({
   // hier die Personalien aus dem Fragebogen hinterlegen.
   beforeMount() {
     console.log(this.$store.getPatient());
+
 
     // Family Name
     const familyNameQuestion = this.qData.findQuestionById(
@@ -414,8 +415,16 @@ export default defineComponent({
         patientResource.telecom[phonePrivateIndex] = phoneContactPoint;
       }
 
+
       // Adds or edits patient data
-      this.$epdUtils.useITI93(this.$store.getPatient(), ITI_93_ACTION.UPDATE);
+      //this.$epdUtils.useITI93(this.$store.getPatient(), ITI_93_ACTION.UPDATE);
+
+
+    // Adds or edits patient data
+    this.$epdUtils.useITI93(this.$store.getPatient(), ITI_93_ACTION.UPDATE)
+    .then((response) => {      console.log('iti-93 successfull', response)    })    .catch((error) => {      console.error(error);    });
+
+
 
 
 
