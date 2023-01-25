@@ -50,7 +50,7 @@ export interface Oids {
 export default class Store {
   private fhirUtils: FhirUtils;
   private user: LoginType | undefined;
-  private patient: Patient = {};
+  private patient: Patient = {resourceType: 'Patient'};
   private settings = this.getDefaultSettings();
   private oids = this.getDefaultOids();
   private diaryEntries = new Array<DiaryEntry>();
@@ -649,7 +649,7 @@ export default class Store {
    */
   clearAll(): void {
     this.user = undefined;
-    this.patient = {};
+    this.patient = {resourceType: 'Patient'};
     this.oids = this.getDefaultOids();
     this.diaryEntries = [];
     this.knownAllergies = [];

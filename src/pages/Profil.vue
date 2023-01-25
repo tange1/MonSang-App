@@ -134,7 +134,7 @@
             </q-card>
           </q-expansion-item>
 
-          <q-expansion-item expand-separator icon="bloodtype" label="Blutgruppe">
+          <q-expansion-item expand-separator icon="favorite_border" label="Blutgruppe">
             <q-card>
               <q-card-section>
                 <div class="row">
@@ -160,7 +160,7 @@
                     3009 Bern</q-item-label>
                 </q-item-section>
                 <q-item-section side>
-                  <q-icon name="emergency" color="primary" />
+                  <q-icon name="military_tech" color="primary" />
                 </q-item-section>
               </q-item>
               <q-separator spaced inset />
@@ -172,7 +172,7 @@
                     3009 Bern</q-item-label>
                 </q-item-section>
                 <q-item-section side>
-                  <q-icon name="emergency" color="primary" />
+                  <q-icon name="military_tech" color="primary" />
                 </q-item-section>
               </q-item>
               <q-separator spaced inset />
@@ -184,7 +184,7 @@
                     3009 Bern</q-item-label>
                 </q-item-section>
                 <q-item-section side>
-                  <q-icon name="emergency" color="primary" />
+                  <q-icon name="military_tech" color="primary" />
                 </q-item-section>
               </q-item>
 

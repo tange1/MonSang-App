@@ -35,7 +35,7 @@
             <q-item-label>Mitarbeit</q-item-label>
             <q-item-label caption lines="7">Diese Arbeit wurde mithilfe des Instituts für Medizininformatik (I4MI)
               entwickelt.
-              Auch das Schweizerische Rote Kreuz (SRK) hat in Forms eines Interviews einen Beitrag geleistet.
+              Auch das Schweizerische Rote Kreuz (SRK) hat in Form eines Interviews einen Beitrag geleistet.
             </q-item-label>
           </q-item-section>
         </q-item>

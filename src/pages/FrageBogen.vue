@@ -71,16 +71,16 @@ import {
   HumanName,
   HumanNameNameUse,
   code,
-  PatientAdministrativeGender,
+  PatientAdministrativeGender
 } from '@i4mi/fhir_r4';
 import { IAnswerOption, QuestionnaireData } from '@i4mi/fhir_questionnaire';
 import EpdPlaygroundUtils, {
-  ITI_93_ACTION,
+  ITI_93_ACTION
 } from '@i4mi/mhealth-proto-components';
 import {
   Iti65DocumentBundle,
   Iti65Metadata,
-  SystemCodeExtension,
+  SystemCodeExtension
 } from '@i4mi/mhealth-proto-components';
 //import { response } from 'express';
 //import { QPage, QCard, QSeparator, QCardSection, QBtn, QPopupProxy, QBanner, QIcon, date } from 'quasar';
@@ -93,14 +93,13 @@ export default defineComponent({
       lang: 'de',
       qData: new QuestionnaireData(NEUSPENDER as Questionnaire, ['de']),
       response: undefined as QuestionnaireResponse | undefined,
-      categorySelect: undefined as SystemCodeExtension | undefined,
+      categorySelect: undefined as SystemCodeExtension | undefined
     };
   },
 
   // hier die Personalien aus dem Fragebogen hinterlegen.
   beforeMount() {
     console.log(this.$store.getPatient());
-
 
     // Family Name
     const familyNameQuestion = this.qData.findQuestionById(
@@ -110,7 +109,7 @@ export default defineComponent({
     if (familyNameQuestion) {
       this.qData.updateQuestionAnswers(familyNameQuestion, {
         answer: { de: 'Wyss' },
-        code: 'Wyss',
+        code: 'Wyss'
       } as IAnswerOption);
     }
 
@@ -122,7 +121,7 @@ export default defineComponent({
     if (givenNameQuestion) {
       this.qData.updateQuestionAnswers(givenNameQuestion, {
         answer: { de: 'Laura' },
-        code: 'Laura',
+        code: 'Laura'
       } as IAnswerOption);
     }
 
@@ -134,7 +133,7 @@ export default defineComponent({
     if (dateOfBirthQuestion) {
       this.qData.updateQuestionAnswers(dateOfBirthQuestion, {
         answer: { de: '03.01.1927' },
-        code: '03.01.1927',
+        code: '03.01.1927'
       } as IAnswerOption);
     }
 
@@ -146,7 +145,7 @@ export default defineComponent({
     if (genderQuestion) {
       this.qData.updateQuestionAnswers(genderQuestion, {
         answer: { de: 'weiblich' },
-        code: 'female',
+        code: 'female'
       } as IAnswerOption);
     }
 
@@ -158,7 +157,7 @@ export default defineComponent({
     if (addressLineQuestion) {
       this.qData.updateQuestionAnswers(addressLineQuestion, {
         answer: { de: 'Oberdorfstrasse' },
-        code: 'Oberdorfstrasse',
+        code: 'Oberdorfstrasse'
       } as IAnswerOption);
     }
     // Address Street Number
@@ -169,7 +168,7 @@ export default defineComponent({
     if (addressLineNumberQuestion) {
       this.qData.updateQuestionAnswers(addressLineNumberQuestion, {
         answer: { de: '3' },
-        code: '3',
+        code: '3'
       } as IAnswerOption);
     }
     // Address Postal Code
@@ -180,7 +179,7 @@ export default defineComponent({
     if (addressPostalCodeQuestion) {
       this.qData.updateQuestionAnswers(addressPostalCodeQuestion, {
         answer: { de: '4001' },
-        code: '4001',
+        code: '4001'
       } as IAnswerOption);
     }
     // Address City
@@ -191,7 +190,7 @@ export default defineComponent({
     if (addressCityQuestion) {
       this.qData.updateQuestionAnswers(addressCityQuestion, {
         answer: { de: 'Basel' },
-        code: 'Basel',
+        code: 'Basel'
       } as IAnswerOption);
     }
 
@@ -203,7 +202,7 @@ export default defineComponent({
     if (emailQuestion) {
       this.qData.updateQuestionAnswers(emailQuestion, {
         answer: { de: 'test@test.ch' },
-        code: 'test@test.ch',
+        code: 'test@test.ch'
       } as IAnswerOption);
     }
 
@@ -215,7 +214,7 @@ export default defineComponent({
     if (phonePrivateQuestion) {
       this.qData.updateQuestionAnswers(phonePrivateQuestion, {
         answer: { de: '076 111 22 33' },
-        code: '076 111 22 33',
+        code: '076 111 22 33'
       } as IAnswerOption);
     }
     // Phone Work
@@ -226,7 +225,7 @@ export default defineComponent({
     if (phoneWorkQuestion) {
       this.qData.updateQuestionAnswers(phoneWorkQuestion, {
         answer: { de: '076 111 22 55' },
-        code: '076 111 22 55',
+        code: '076 111 22 55'
       } as IAnswerOption);
     }
     // Q2
@@ -238,8 +237,8 @@ export default defineComponent({
       this.qData.updateQuestionAnswers(Q2Question, {
         answer: { de: 'Ja' },
         code: {
-          valueCoding: { system: 'http://snomed.info/sct', code: '373066001' },
-        },
+          valueCoding: { system: 'http://snomed.info/sct', code: '373066001' }
+        }
       } as IAnswerOption);
     }
     // Q20
@@ -251,8 +250,8 @@ export default defineComponent({
       this.qData.updateQuestionAnswers(Q20Question, {
         answer: { de: 'Nein' },
         code: {
-          valueCoding: { system: 'http://snomed.info/sct', code: '373067005' },
-        },
+          valueCoding: { system: 'http://snomed.info/sct', code: '373067005' }
+        }
       } as IAnswerOption);
     }
     // Q22
@@ -264,8 +263,8 @@ export default defineComponent({
       this.qData.updateQuestionAnswers(Q22Question, {
         answer: { de: 'Nein' },
         code: {
-          valueCoding: { system: 'http://snomed.info/sct', code: '373067005' },
-        },
+          valueCoding: { system: 'http://snomed.info/sct', code: '373067005' }
+        }
       } as IAnswerOption);
     }
     // Q25
@@ -277,8 +276,8 @@ export default defineComponent({
       this.qData.updateQuestionAnswers(Q25Question, {
         answer: { de: 'Nein' },
         code: {
-          valueCoding: { system: 'http://snomed.info/sct', code: '373067005' },
-        },
+          valueCoding: { system: 'http://snomed.info/sct', code: '373067005' }
+        }
       } as IAnswerOption);
     }
     // Q26
@@ -290,8 +289,8 @@ export default defineComponent({
       this.qData.updateQuestionAnswers(Q26Question, {
         answer: { de: 'Ja' },
         code: {
-          valueCoding: { system: 'http://snomed.info/sct', code: '373066001' },
-        },
+          valueCoding: { system: 'http://snomed.info/sct', code: '373066001' }
+        }
       } as IAnswerOption);
     }
   },
@@ -304,7 +303,7 @@ export default defineComponent({
       try {
         this.response = this.qData.getQuestionnaireResponse(this.lang, {
           reset: false,
-          includeID: true,
+          includeID: true
         });
       } catch (error) {
         console.log('Es ging etwas schief beim Questionnaire speichern', error);
@@ -321,7 +320,7 @@ export default defineComponent({
         ?.selectedAnswers[0].valueString;
       const familyNameHumanName: HumanName = {
         family: familyName,
-        use: HumanNameNameUse.USUAL,
+        use: HumanNameNameUse.USUAL
       };
       const familyNameIndex = patientResource.name.findIndex(
         (name) => name.use === HumanNameNameUse.USUAL
@@ -340,7 +339,7 @@ export default defineComponent({
         ?.selectedAnswers[0].valueString;
       const givenNameHumanName: HumanName = {
         family: givenName,
-        use: HumanNameNameUse.USUAL,
+        use: HumanNameNameUse.USUAL
       };
       const givenNameIndex = patientResource.name.findIndex(
         (name) => name.use === HumanNameNameUse.USUAL
@@ -381,7 +380,7 @@ export default defineComponent({
       const emailContactPoint: ContactPoint = {
         system: ContactPointSystem.EMAIL,
         value: email,
-        use: ContactPointUse.HOME,
+        use: ContactPointUse.HOME
       };
       const emailIndex = patientResource.telecom.findIndex(
         (telecom) =>
@@ -402,7 +401,7 @@ export default defineComponent({
       const phoneContactPoint: ContactPoint = {
         system: ContactPointSystem.PHONE,
         value: phonePrivate,
-        use: ContactPointUse.HOME,
+        use: ContactPointUse.HOME
       };
       const phonePrivateIndex = patientResource.telecom.findIndex(
         (telecom) =>
@@ -415,29 +414,29 @@ export default defineComponent({
         patientResource.telecom[phonePrivateIndex] = phoneContactPoint;
       }
 
-
       // Adds or edits patient data
-      //this.$epdUtils.useITI93(this.$store.getPatient(), ITI_93_ACTION.UPDATE);
-
-
-    // Adds or edits patient data
-    this.$epdUtils.useITI93(this.$store.getPatient(), ITI_93_ACTION.UPDATE)
-    .then((response) => {      console.log('iti-93 successfull', response)    })    .catch((error) => {      console.error(error);    });
-
-
-
-
+      const pat = this.$store.getPatient();
+      pat.contained = [this.$store.getOrganizationResource()];
+      pat.managingOrganization = { reference: '#1' };
+      this.$epdUtils
+        .useITI93(this.$store.getPatient(), ITI_93_ACTION.UPDATE)
+        .then((response) => {
+          console.log('iti-93 successfull', response);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
 
       const category = {
         system: 'http://snomed.info/sct',
         code: '417319006',
-        display: 'Dokument zu gesundheitsrelevantem Ereignis',
+        display: 'Dokument zu gesundheitsrelevantem Ereignis'
       };
 
       const type = {
         system: 'http://snomed.info/sct',
         code: '445418005',
-        display: 'Dokument ausserhalb des Behandlungskontextes',
+        display: 'Dokument ausserhalb des Behandlungskontextes'
       };
 
       // Mit createITI65Bundle() den Bundle erstellen und JSON-Datei hochladen.
@@ -452,32 +451,28 @@ export default defineComponent({
         facilityCoding: {
           system: 'http://snomed.info/sct',
           code: '394778007',
-          display: "Client's or patient's home (environment)",
+          display: "Client's or patient's home (environment)"
         },
         practiceSettingCoding: {
           system: 'http://snomed.info/sct',
           code: '394802001',
-          display: 'General medicine',
-        },
+          display: 'General medicine'
+        }
         //authorRole: ITI_65_AUTHOR_ROLE.PAT
       } as Iti65Metadata;
       this.$fhirUtils
         .createIti65Bundle(
           this.$store.getPatient(),
-          new File(
-            [JSON.stringify(this.response)],
-            'Fragebogen.json',
-            {
-              type: 'application/fhir+json',
-            }
-          ),
+          new File([JSON.stringify(this.response)], 'Fragebogen.json', {
+            type: 'application/fhir+json'
+          }),
           metadata
         )
         .then((result) => this.$epdUtils.useITI65(result))
         .then((result) => console.log(JSON.stringify(result)))
         .catch((error) => console.error(error));
-    },
-  },
+    }
+  }
 });
 </script>
 

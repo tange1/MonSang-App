@@ -99,7 +99,7 @@
     <q-footer>
       <q-tabs class="bg-primary text-white shadow-2">
         <q-route-tab to="/home" icon="home" label="Home" />
-        <q-route-tab to="/spenden" icon="bloodtype" label="Spenden" />
+        <q-route-tab to="/spenden" icon="favorite_border" label="Spenden" />
         <q-route-tab to="/informationen" icon="info" label="Info" />
         <q-route-tab to="/profil" icon="person" label="Profil" />
       </q-tabs>
@@ -197,4 +197,5 @@ export default defineComponent({
 }
 }
 */
+
 </style>
