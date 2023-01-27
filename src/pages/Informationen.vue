@@ -57,7 +57,7 @@
               <q-item-label>4 von 5 Menschen brauchen mind. einmal im Leben fremdes Blut.</q-item-label>
             </q-item-section>
             <q-item-section side>
-              <q-icon name="groups" color="primary" />
+              <q-icon name="" color="primary" />
             </q-item-section>
           </q-item>
 
