@@ -16,7 +16,7 @@
               Alkoholgenuß verzichtet werden.</q-item-label>
           </q-item-section>
           <q-item-section side>
-            <q-icon name="liquor" color="primary" />
+            <q-icon name="local_bar" color="primary" />
           </q-item-section>
 
         </q-item>
@@ -31,7 +31,7 @@
               fetthaltige Speisen.</q-item-label>
           </q-item-section>
           <q-item-section side>
-            <q-icon name="lunch_dining" color="primary" />
+            <q-icon name="fastfood" color="primary" />
           </q-item-section>
         </q-item>
 
@@ -58,7 +58,7 @@
               wohl fühlen!</q-item-label>
           </q-item-section>
           <q-item-section side>
-            <q-icon name="self_improvement" color="primary" />
+            <q-icon name="sentiment_satisfied" color="primary" />
           </q-item-section>
         </q-item>
       </q-card>

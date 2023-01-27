@@ -25,7 +25,18 @@
     "password": "test",
     "phone": "079 123 45 67",
     "givenName": "Matteo",
-    "familyName": "Lecomte"
+    "familyName": "Lecomte",
+    "birthdate": "23.04.2001",
+    "gender": "männlich",
+
+      "street": "Chemin des Carrons ",
+      "streetNumber": "91",
+      "postalCode": "1474",
+      "place": "Cheyres-Châbles",
+
+    "donationNumber": "1234567",
+    "bloodGroup": "0-"
+
   },
   {
     "username": "pat67@approches.ch",
@@ -50,6 +61,6 @@
       "place": "Basel"
     },
     "donationNumber": "1234567",
-    "bloodGroup": "0+"
+    "bloodGroup": "0-"
   }
 ]

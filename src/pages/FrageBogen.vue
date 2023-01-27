@@ -19,10 +19,13 @@
           :disabled="!qData"
           @click="qData?.resetResponse()"
           class="full-width"
-          color="primary"
+          color="info"
           >Antworten zurücksetzen</q-btn
         >
+      </q-card-section>
         <q-separator inset></q-separator>
+
+      <q-card-section>
         <q-btn @click="setAnswers" class="full-width" color="primary"
           >Antworten speichern</q-btn
         >
@@ -43,7 +46,7 @@
             Der Fragebogen wurde erfolgreich hochgeladen.
           </q-banner>
         </q-popup-proxy>
-        <button @click="response = undefined">schliessen</button>
+        <!--button @click="response = undefined">schliessen</button-->
       </div>
 
       <!--div v-if="response" class="modal" id="response-modal">
@@ -108,8 +111,8 @@ export default defineComponent({
     );
     if (familyNameQuestion) {
       this.qData.updateQuestionAnswers(familyNameQuestion, {
-        answer: { de: 'Wyss' },
-        code: 'Wyss'
+        answer: { de: 'Lecomte' },
+        code: 'Lecomte'
       } as IAnswerOption);
     }
 
@@ -120,8 +123,8 @@ export default defineComponent({
     );
     if (givenNameQuestion) {
       this.qData.updateQuestionAnswers(givenNameQuestion, {
-        answer: { de: 'Laura' },
-        code: 'Laura'
+        answer: { de: 'Matteo' },
+        code: 'Matteo'
       } as IAnswerOption);
     }
 
@@ -132,8 +135,8 @@ export default defineComponent({
     );
     if (dateOfBirthQuestion) {
       this.qData.updateQuestionAnswers(dateOfBirthQuestion, {
-        answer: { de: '03.01.1927' },
-        code: '03.01.1927'
+        answer: { de: '23.04.2001' },
+        code: '23.04.2001'
       } as IAnswerOption);
     }
 
@@ -144,8 +147,8 @@ export default defineComponent({
     );
     if (genderQuestion) {
       this.qData.updateQuestionAnswers(genderQuestion, {
-        answer: { de: 'weiblich' },
-        code: 'female'
+        answer: { de: 'männlich' },
+        code: 'männlich'
       } as IAnswerOption);
     }
 
@@ -156,8 +159,8 @@ export default defineComponent({
     );
     if (addressLineQuestion) {
       this.qData.updateQuestionAnswers(addressLineQuestion, {
-        answer: { de: 'Oberdorfstrasse' },
-        code: 'Oberdorfstrasse'
+        answer: { de: 'Chemin des Carrons' },
+        code: 'Chemin des Carrons'
       } as IAnswerOption);
     }
     // Address Street Number
@@ -167,8 +170,8 @@ export default defineComponent({
     );
     if (addressLineNumberQuestion) {
       this.qData.updateQuestionAnswers(addressLineNumberQuestion, {
-        answer: { de: '3' },
-        code: '3'
+        answer: { de: '91' },
+        code: '91'
       } as IAnswerOption);
     }
     // Address Postal Code
@@ -178,8 +181,8 @@ export default defineComponent({
     );
     if (addressPostalCodeQuestion) {
       this.qData.updateQuestionAnswers(addressPostalCodeQuestion, {
-        answer: { de: '4001' },
-        code: '4001'
+        answer: { de: '1474' },
+        code: '1474'
       } as IAnswerOption);
     }
     // Address City
@@ -189,8 +192,8 @@ export default defineComponent({
     );
     if (addressCityQuestion) {
       this.qData.updateQuestionAnswers(addressCityQuestion, {
-        answer: { de: 'Basel' },
-        code: 'Basel'
+        answer: { de: 'Cheyres-Châbles' },
+        code: 'Cheyres-Châbles'
       } as IAnswerOption);
     }
 
@@ -201,8 +204,8 @@ export default defineComponent({
     );
     if (emailQuestion) {
       this.qData.updateQuestionAnswers(emailQuestion, {
-        answer: { de: 'test@test.ch' },
-        code: 'test@test.ch'
+        answer: { de: 'matteo@mail.li' },
+        code: 'matteo@mail.li'
       } as IAnswerOption);
     }
 
@@ -213,8 +216,19 @@ export default defineComponent({
     );
     if (phonePrivateQuestion) {
       this.qData.updateQuestionAnswers(phonePrivateQuestion, {
-        answer: { de: '076 111 22 33' },
-        code: '076 111 22 33'
+        answer: { de: '079 123 45 67' },
+        code: '079 123 45 67'
+      } as IAnswerOption);
+    }
+    // Phone Mobile
+    const phoneMobileQuestion = this.qData.findQuestionById(
+      'P9',
+      this.qData.getQuestions()
+    );
+    if (phoneMobileQuestion) {
+      this.qData.updateQuestionAnswers(phoneMobileQuestion, {
+        answer: { de: '079 123 45 67' },
+        code: '079 123 45 67'
       } as IAnswerOption);
     }
     // Phone Work
@@ -228,6 +242,20 @@ export default defineComponent({
         code: '076 111 22 55'
       } as IAnswerOption);
     }
+    // Q1
+    const Q1Question = this.qData.findQuestionById(
+      'Q1',
+      this.qData.getQuestions()
+    );
+    if (Q1Question) {
+      this.qData.updateQuestionAnswers(Q1Question, {
+        answer: { de: 'Ja' },
+        code: {
+          valueCoding: { system: 'http://snomed.info/sct', code: '373066001' }
+        }
+      } as IAnswerOption);
+    }
+
     // Q2
     const Q2Question = this.qData.findQuestionById(
       'Q2',
@@ -291,6 +319,17 @@ export default defineComponent({
         code: {
           valueCoding: { system: 'http://snomed.info/sct', code: '373066001' }
         }
+      } as IAnswerOption);
+    }
+    // Q26.1
+    const Q26_1Question = this.qData.findQuestionById(
+      'Q26.1',
+      this.qData.getQuestions()
+    );
+    if (Q26_1Question) {
+      this.qData.updateQuestionAnswers(Q26_1Question, {
+        answer: { de: 'Australien' },
+        code: 'Australien'
       } as IAnswerOption);
     }
   },
